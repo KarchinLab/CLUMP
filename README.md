@@ -57,7 +57,7 @@ PROTEIN_ID LENGTH
 I have provided a protein length file: protein.2.length.txt
 
 
-EXAMPLE 1 PERMUTATION TESTING OF A SINGLE GENE USING CLUMP:
+### EXAMPLE 1:  PERMUTATION TESTING OF A SINGLE GENE USING CLUMP
 
 python combined.clump.py -f example.inputfile.txt -p protein.2.length.txt -z 10000 -c example.controlfile.txt -t 
 
@@ -69,7 +69,7 @@ GENE    PROTEIN_ID      STUDY_NAME      CLUMP_SCORE_DIFFERENCE(Controls-Cases)  
 ACADS   NP_000008.1     1000Genomes     0.0     0.497   0.503   1.51153082805   1.51153082805
 
 
-EXAMPLE 2: RAW CLUMP SCORE
+### EXAMPLE 2: RAW CLUMP SCORE
 
 python combined.clump.py -f example.inputfile.txt -p protein.2.length.txt
 
@@ -81,7 +81,7 @@ GENE    PROTEIN_ID      STUDY_NAME      Raw_Clump_Score
 ACADS   NP_000008.1     1000Genomes     1.51153082805
  
 
-EXAMPLE 3: HIGH THROUGHPUT PERMUTATION CLUMP ANALYSIS:
+### EXAMPLE 3: HIGH THROUGHPUT PERMUTATION CLUMP ANALYSIS
 
 Permutation testing for clump analysis runs much faster when the input files are split among individual genes. I have created an example with a shell script to demonstrate the easiest way to perform clump permutation testing on a large set of genes.
 
