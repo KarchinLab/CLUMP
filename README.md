@@ -12,8 +12,9 @@ CLUMP (CLustering by Mutation Postion) is an unsupervised clustering of amino ac
 
 ## USAGE:
 
+```
 python combined.clump.py -f inputfile -p protein_lengths 
-
+```
 OPTIONS:
 -a allele_frequency(Default=1)
    Remove Mutations Greater than an allele frequency threshold. Default includes every variant.
@@ -52,14 +53,16 @@ Column 10:DOMAIN	       Optional column
 I have provided a set of neutral variation from 1000 Genomes in the format used by CLUMP.
 
 The protein length file is in the format:
-PROTEIN_ID LENGTH
+```PROTEIN_ID LENGTH```
 
 I have provided a protein length file: protein.2.length.txt
 
 
 ### EXAMPLE 1:  PERMUTATION TESTING OF A SINGLE GENE USING CLUMP
 
+```
 python combined.clump.py -f example.inputfile.txt -p protein.2.length.txt -z 10000 -c example.controlfile.txt -t 
+```
 
 OUTPUT:
 
@@ -71,7 +74,9 @@ ACADS   NP_000008.1     1000Genomes     0.0     0.497   0.503   1.51153082805   
 
 ### EXAMPLE 2: RAW CLUMP SCORE
 
+```
 python combined.clump.py -f example.inputfile.txt -p protein.2.length.txt
+```
 
 OUTPUT:
 
@@ -85,7 +90,7 @@ ACADS   NP_000008.1     1000Genomes     1.51153082805
 
 Permutation testing for clump analysis runs much faster when the input files are split among individual genes. I have created an example with a shell script to demonstrate the easiest way to perform clump permutation testing on a large set of genes.
 
-
+```
 bash runlargescaleclump.sh example3.inputfile.txt example3.controlfile.txt 100
-
+```
 
