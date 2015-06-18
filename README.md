@@ -6,6 +6,8 @@ CLUMP (CLustering by Mutation Postion) is an unsupervised clustering of amino ac
 If you use CLUMP in your research, please cite:
 * Turner T et al. Proteins linked to autosomal dominant and autosomal recessive disorders harbor characteristic rare missense mutation distribution patterns <http://biorxiv.org/content/early/2015/04/27/018648>
 
+[to be substituted with journal url]
+
 ## CLUMP requires: 
 * R/3.0.0
 * python/2.7.3
