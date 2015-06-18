@@ -1,14 +1,13 @@
-# CLUMP
-CLUstering by Mutation Position
+# CLUMP: CLUstering by Mutation Position
 
 CLUMP (CLustering by Mutation Postion) is an unsupervised clustering of amino acid residue positions where variants occur, without any prior knowledge of their functional importance.
 
 ## CLUMP requires: 
-R/3.0.0
-python/2.7.3
-numpy/1.8.0
-scipy/0.12.0
-the R library package 'fpc'
+* R/3.0.0
+* python/2.7.3
+* numpy/1.8.0
+* scipy/0.12.0
+* the R library package 'fpc'
 
 
 ## USAGE:
