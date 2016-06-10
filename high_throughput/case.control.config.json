@@ -1,0 +1,6 @@
+{
+  "protein_file": "./proteins_to_test.txt",
+  "mutation_file": "../1k.eu.annotations.with.domains.clump.1.0.0.tsv",
+  "control_file": "../1k.eu.annotations.with.domains.clump.1.0.0.tsv",
+  "permutations": "100",
+}
