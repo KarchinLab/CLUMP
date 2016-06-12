@@ -129,6 +129,7 @@ cd CLUMP/high_throughput/
 raw.score.config.json 
 raw.score.snake
 ```
+
 	* Case-Control CLUMP 
 ```
 case.control.config.json 
