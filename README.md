@@ -139,6 +139,7 @@ case.control.snake
 * Run the snakemake either locally or by submitting to cluster
 
 Raw CLUMP
+
 Local
 
 ```
@@ -152,6 +153,7 @@ snakemake --cluster 'qsub {params.sge_opts}' -j 100 -w 30 -k -s raw.score.snake
 ```
 
 Case-Control CLUMP
+
 Local
 
 ```
