@@ -118,7 +118,7 @@ cut -f2 <mutation file> | sort | uniq > proteins_to_plot.txt
 * Get the github repository 
 
 ```
-git clone -b devel https://github.com/tycheleturner/CLUMP.git
+git clone https://github.com/tycheleturner/CLUMP.git
 cd CLUMP/high_throughput/
 ```
 
