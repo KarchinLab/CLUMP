@@ -124,13 +124,13 @@ cd CLUMP/high_throughput/
 
 * Fill out the config file with your information depending on the test you want to run 
 
-	* Raw CLUMP 
+Raw CLUMP 
 ```
 raw.score.config.json 
 raw.score.snake
 ```
 
-	* Case-Control CLUMP 
+Case-Control CLUMP 
 ```
 case.control.config.json 
 case.control.snake
