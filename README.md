@@ -102,9 +102,9 @@ Permutation testing for clump analysis runs much faster when the input files are
 bash runlargescaleclump.sh example3.inputfile.txt example3.controlfile.txt 100
 ```
 
-#########################################################
+==================================================
 Running high throughput CLUMP using snakemake:
-#########################################################
+==================================================
 
 To run, generate a CLUMP style mutation file as above:
 
