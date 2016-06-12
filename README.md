@@ -102,3 +102,55 @@ Permutation testing for clump analysis runs much faster when the input files are
 bash runlargescaleclump.sh example3.inputfile.txt example3.controlfile.txt 100
 ```
 
+#########################################################
+Running high throughput CLUMP using snakemake:
+#########################################################
+
+To run, generate a CLUMP style mutation file as above:
+
+* Generate the list of proteins to test: 
+
+to plot all you could use the command below or you could just make your own list
+```
+cut -f2 <mutation file> | sort | uniq > proteins_to_plot.txt
+```
+
+* Get the github repository 
+
+```
+git clone -b devel https://github.com/tycheleturner/CLUMP.git
+cd CLUMP/high_throughput/
+```
+
+* Fill out the config file with your information depending on the test you want to run 
+
+	* Raw CLUMP 
+		raw.score.config.json \\
+		raw.score.snake
+
+	* Case-Control CLUMP 
+		case.control.config.json \\
+		case.control.snake
+
+* Run the snakemake either locally or by submitting to cluster
+
+	* Raw CLUMP
+		* Local
+```
+snakemake -s raw.score.snake
+```
+		* Submit to cluster
+```
+snakemake --cluster 'qsub {params.sge_opts}' -j 100 -w 30 -k -s raw.score.snake
+```
+
+	* Case-Control CLUMP
+		* Local
+```
+snakemake -s case.control.snake
+```
+		* Submit to cluster
+```
+snakemake --cluster 'qsub {params.sge_opts}' -j 100 -w 30 -k -s case.control.snake
+```
+
