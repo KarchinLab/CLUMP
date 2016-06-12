@@ -125,12 +125,15 @@ cd CLUMP/high_throughput/
 * Fill out the config file with your information depending on the test you want to run 
 
 	* Raw CLUMP 
-		raw.score.config.json 
-		raw.score.snake
-
+```
+raw.score.config.json 
+raw.score.snake
+```
 	* Case-Control CLUMP 
-		case.control.config.json 
-		case.control.snake
+```
+case.control.config.json 
+case.control.snake
+```
 
 * Run the snakemake either locally or by submitting to cluster
 
