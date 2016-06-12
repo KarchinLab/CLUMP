@@ -138,7 +138,7 @@ case.control.snake
 
 * Run the snakemake either locally or by submitting to cluster
 
-	* Raw CLUMP
+Raw CLUMP
 Local
 
 ```
