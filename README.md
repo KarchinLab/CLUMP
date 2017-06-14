@@ -45,7 +45,7 @@ Permutation CLUMP works best when the input file only contains one gene.
 The input file and the control input file are in the same format:
 
 
-* Column 1: GENE_HUGO_ID 	       Used as a column placeholder in CLUMP scripts (Can use NA if unavailable)
+* Column 1: GENE_HUGO_ID 	      Required
 * Column 2: PROTEIN_ID 	       Required: Must match Protein Id's provided in the protein length file
 * Column 3: STUDY_NAME 	       Used as a column placeholder in CLUMP scripts (Can use NA if unavailable)
 * Column 4: AMINO_ACID_POSITION  Required: Amino Acid position of the variant
@@ -53,8 +53,8 @@ The input file and the control input file are in the same format:
 * Column 6: POSITION 	       Used as a column placeholder in CLUMP scripts (Can use NA if unavailable)
 * Column 7: REF Allele	       Used as a column placeholder in CLUMP scripts (Can use NA if unavailable)
 * Column 8: ALT Allele	       Used as a column placeholder in CLUMP scripts (Can use NA if unavailable)
-* Column 9: ALLELE_FREQUENCY     Optional column. Allele Frequency is treated as 0 if not provided
-* Column 10:DOMAIN	       Optional column
+* Column 9: ALLELE_FREQUENCY     Required column. Need to add a value between 0 and 1. If you do not know it can just be 0 unless you are actually using the allele frequency feature of CLUMP.
+* Column 10:DOMAIN	       Optional column (can be NA)
 
 I have provided a set of neutral variation from 1000 Genomes in the format used by CLUMP.
 
