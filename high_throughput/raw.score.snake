@@ -1,0 +1,58 @@
+#High Throughput Raw Clump Pipeline
+#Tychele Turner, Ph.D.
+#June 9, 2016
+
+import os
+
+#configuration
+if config == {}:
+    configfile: "raw.score.config.json"
+
+PROTEIN_FILE = config["protein_file"]
+MUTFILE = config["mutation_file"]
+
+#show proteins to run
+PROTEINS = []
+with open(PROTEIN_FILE) as f:
+    PROTEINS = f.read().splitlines()
+print(PROTEINS)
+
+rule all:
+        input: MUTFILE, expand("track/{protein}_finished.txt", protein = PROTEINS)
+	params: sge_opts="-l mfree=20G -N run_all" 
+
+rule combine:
+        """combine all files and make the output clean"""
+        shell: """
+        cat clump_results/* | grep -v 'Loading' | grep -v 'Package' > clump.raw.score.txt
+        sed -i '1 iGENE\tPROTEIN_ID\tSTUDY_NAME\tRaw_Clump_Score' clump.raw.score.txt
+        rm -rf input_genes/
+        rm -rf clump_results/
+        """
+
+rule raw_score_clump:
+        input: MUTFILE
+        output: "track/{protein}_finished.txt"
+        params: prefix="{protein}", sge_opts="-l mfree=500M,h_rt=24:00:00 -N raw_score_clump -cwd"
+        shell: """
+        set +e
+
+        module load python/2.7.3
+        module load numpy
+
+        mkdir -p input_genes
+        mkdir -p clump_results
+        mkdir -p track
+
+        grep -w {params.prefix} {input} > input_genes/{params.prefix}
+        python ../combined.clump.py -f input_genes/{params.prefix} -p ../protein.2.length.txt > clump_results/{params.prefix}
+
+        touch {output}
+	"""
+
+rule clean:
+	"""clean up temporary files"""
+	shell: """
+	rm -rf track/
+        """
+
